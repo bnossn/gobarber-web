@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTransition } from 'react-spring';
 
-import Toasts from './Toast';
+import Toast from './Toast';
 
 import { ToastMessage } from '../../hooks/Toast';
 import { Container } from './styles';
@@ -25,7 +25,7 @@ const ToastContainer: React.FC<ToastContainerProps> = ({ messages }) => {
     <Container>
       {/* As props passadas pelo useTransition, são itens de estilização. */}
       {messagesWithTransitions.map(({ item, key, props }) => (
-        <Toasts key={key} style={props} message={item} />
+        <Toast key={key} style={props} message={item} />
       ))}
     </Container>
   );

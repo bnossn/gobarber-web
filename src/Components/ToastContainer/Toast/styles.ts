@@ -3,7 +3,8 @@ import { animated } from 'react-spring';
 
 interface ContainerProps {
   type?: 'success' | 'error' | 'info';
-  hasDescription: boolean;
+  // usado number ao inves de bool pq bool não é reconhecido no DOM element gerando uma msg de erro no console.
+  hasdescription: number;
 }
 
 const toastTypeVariations = {
@@ -67,7 +68,7 @@ export const Container = styled(animated.div)<ContainerProps>`
   }
 
   ${props =>
-    !props.hasDescription &&
+    !props.hasdescription &&
     css`
       align-items: center;
 

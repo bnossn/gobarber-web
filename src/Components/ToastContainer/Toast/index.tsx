@@ -41,7 +41,8 @@ const Toast: React.FC<ToastProps> = ({ message, style }) => {
   return (
     <Container
       type={message.type}
-      hasDescription={!!message.description}
+      // usado number ao inves de bool pq bool não é reconhecido no DOM element gerando uma msg de erro no console.
+      hasdescription={Number(!!message.description)}
       style={style}
     >
       {icons[message.type || 'info']}
